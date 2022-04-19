@@ -1,0 +1,36 @@
+section {
+
+}
+
+.div1 {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+.div1 .child1 { 
+    background-color: red;
+    height: 100px;
+    grid-column: 1 / 5;
+    grid-row: 1;
+    grid-template-areas: "10px 9px";
+    margin: 1px;
+}
+
+.div1 .child2 { 
+    background-color: blue;
+    height: 100px;
+    grid-column: 2 / 5;
+    grid-row: 1;
+    grid-template-areas: "10px 9px";
+    margin: 1px;
+}
+
+.div2 {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+.div2 .child2 { 
+    background-color: yellow;
+    height: 100px;  
+}
