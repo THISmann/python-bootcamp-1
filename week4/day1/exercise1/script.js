@@ -8,4 +8,4 @@
 
     // question 2 
 
-    let array = [data]
+    let newfeed = [data, username , timeline]
