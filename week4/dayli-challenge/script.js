@@ -3,7 +3,7 @@
 let fruits = ["bannana", "apples" , "oranges" , "BLeuberries"];
 
 // question 1
-fruits.pop();
+fruits.shift();
 
 // question 2 
 fruits.sort();
