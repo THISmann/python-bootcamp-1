@@ -85,5 +85,61 @@ if(driver < 18){
         timeline: 0 
     } 
 
-    let newfeed = [data, obj1, obj2 , obj3 ]
+    let newfeed = [data, obj1, obj2 , obj3 ];
 
+    // Learning Conditionals 
+
+    // exercise 1 
+
+    let x = 3;
+    let y = 6;
+
+    if(x > y){
+        console.log(" x is bigger than y ");
+    } else {
+        console.log("y is bigger than x ");
+    }
+
+    // exercise 2 
+
+    // Question 1 
+    let newDog = "Chihuahua";
+
+    // Question 2
+    let numberOfLetter = newDog.length;
+
+    // Question 3 
+    let upperDog = newDog.toUpperCase();
+
+    console.log(upperDog.toLowerCase());
+
+    // question 4 
+
+    if (newDog === "Chihuahua") {
+        console.log("I love Chihuahuas, it’s my favorite dog breed");
+    } else {
+        console.log("I dont care, I prefer cats");
+    }
+
+
+    // exercise 4
+    
+    let users = ["Lea123", "Princess45", "cat&doglovers", "helooo@000"];
+    if (users.length === 0) {
+        console.log("no one online");
+    }
+
+    // question 2 
+    if(users.length = 1){
+        console.log( users[0] + " is online ");
+    }
+
+    // question 3 
+    if(users.length = 2){
+        console.log( users[0] + " and " + users[1] + " are online ");
+    }
+
+    // question 4
+    if(users.length > 2){
+        console.log( users[0] + "," + users[1] + " and 3 more are online ");
+    }
