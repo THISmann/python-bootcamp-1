@@ -228,3 +228,48 @@ if(driver < 18){
        if (user2.length < 3) {
            console.log(user2);
        }
+
+
+       // Exercise 1 Age Difference
+
+       // Instruction  Seft-xss
+
+       let date1 = prompt("entre ta date 1");
+       let date2 = prompt("entre ta date 2");
+       let today = 2022
+
+       if ((today - date1)/(today - date2) === 2) {
+           console.log("tu as le double de mon age");
+       }
+
+       // 
+       // exercise 2 
+
+       // question 1
+       let clientCode = prompt("entrez votre code Zip");
+
+       codeLength = clientCode.toString().length;
+
+       if (codeLength === 5) {
+           console.log("success");
+       } else {
+           console.log("error");
+       }
+
+       // question 2
+         
+       if (typeof(clientCode) === 'nunber') {
+        console.log("success");
+       }
+
+       // question 3 
+
+       // question 4
+
+       // Exercise 3
+
+       // question 1
+       
+       let user22 = prompt();
+
+
