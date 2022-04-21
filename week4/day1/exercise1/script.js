@@ -17,3 +17,31 @@
               console.log(index + "le nombre est impair"); 
             }
        }
+
+
+       
+
+       let names= ["john", "sarah", 23, "Rudolf",34];
+
+       for (let index = 0; index < names.length; index++) {
+           if(typeof(index) !== "string"){
+               continue;
+               console.log(index);
+           } else if (typeof(names) === "string"){
+               if (index[0] !== index[0].toLowerCase()) {
+                   index[0].toUpperCase();
+                   console.log(index);
+               }
+           }
+       }
+
+       // question
+
+
+       for (let index = 0; index < names.length; index++) {
+           if (typeof(index) !== 'string' ) {m
+               break; 
+           } else if (typeof(index) === 'string') {
+               console.log(index);
+           }
+       }
