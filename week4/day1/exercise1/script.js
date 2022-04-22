@@ -19,7 +19,7 @@
        }
 
 
-       
+
 
        let names= ["john", "sarah", 23, "Rudolf",34];
 
@@ -44,4 +44,48 @@
            } else if (typeof(index) === 'string') {
                console.log(index);
            }
+       }
+
+
+       // Learning Loop exercise 
+
+       // exercise 1 list of people 
+
+       let people = ["Greg", "Mary", "Devon" , "James"];
+
+       // question 1 
+
+       people.shift();
+
+       // question 2
+
+       people.splice(people.length -1 , 1 , "Jason");
+
+       // Question 3
+
+       people.push("etienne");
+
+       // Question 4
+
+       console.log(people.indexOf("Mary"));
+
+       // question 5 
+
+       let copyPeople = people.slice(people.indexOf("Mary") , 1 )
+
+       // question 
+        
+       people.indexOf("Foo");
+
+       // question 7
+
+       let last = people.length - 1
+
+       //
+
+
+       // exercise 5
+
+       let famillies = {
+           
        }
