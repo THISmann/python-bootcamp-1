@@ -1,48 +1,50 @@
 let num1 = "";
 let num2 = "";
-let result = "";
+let result = 0;
 let op = "";
 
-function number(num){
-    num1 = num1.concat(num);
+function number(num){  
 
-    console.log(num1); 
-    return num;
+    if(op.length !== 1){
+        num1 = num1.concat(num);
+    } else {
+        num2 = num2.concat(num);
+    }
+
+    console.log(num1 , num2);  
 }
 
 
 
 function operator(operator){
     console.log(operator);
-    op = operator;
-    return true;
+    op = operator; 
 }
-
-let Op = operator(operator);
+ 
 
 function equal(num1 , num2 , result ){
     switch (op){
         case "+":
-            result = num1 + num2;
+            result =  parseInt(num1 + num2) ;
             break;
 
             case "-":
-                result = num1 - num2;
+                result = parseInt(num1) - parseInt(num2);
                 break;
 
                 case "*":
-                    result = num1 * num2;
+                    result = parseInt(num1) * parseInt(num2);
                     break;
 
                     case "/":
-                        result = num1 / num2;
+                        result = parseInt(num1) / parseInt(num2);
                         break;
 
                         default:
                             console.log("error");
 
     }
-
+    console.log(result);
     return result;
 }
 
