@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="one">Welcome</h1>
+    <p class="para">This is the welcome message.</p>
+    <h2 class="para">Technology</h2>
+    <p class="para">This is the technology section.</p>
+
+    <script>
+        let para = document.getElementsByTagName("p");
+        para.length;
+        let cass = document.getElementsByClassName("para");
+        let text = document.getElementById("one").innerHTML;
+        alert("The first heading is " + text); //output : "The first heading is Welcome"
+    </script>
+</body>
+
+</html>

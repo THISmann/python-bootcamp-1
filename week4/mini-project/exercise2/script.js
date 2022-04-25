@@ -14,13 +14,11 @@ function number(num){
     console.log(num1 , num2);  
 }
 
-
-
 function operator(operator){
     console.log(operator);
     op = operator; 
 }
- 
+
 
 function equal(num1 , num2 , result ){
     switch (op){
@@ -42,8 +40,8 @@ function equal(num1 , num2 , result ){
 
                         default:
                             console.log("error");
-
-    }
+                            
+                        }
     console.log(result);
     return result;
 }
