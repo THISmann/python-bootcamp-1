@@ -9,6 +9,97 @@
 </head>
 
 <body>
+
+    <form>
+        <!- start exo part -->
+            <input id="button" type="button" name="test" draggable="true" value="Click me">
+            <!- end exo part -->
+
+
+                <!- start exo table part -->
+                    <table id="sampleTable" border="1">
+                        <tr>
+                            <td>Row1 cell1</td>
+                            <td>Row1 cell2</td>
+                        </tr>
+                        <tr>
+                            <td>Row2 cell1</td>
+                            <td>Row2 cell2</td>
+                        </tr>
+                    </table>
+
+                    <input type="button" onclick="insertRow()" value="Insert row">
+                    <!- end exo table part -->
+
+
+                        <!-- start exo section 3 -->
+                        <button id="btn">Click me</button>
+                        <button id="btn1">Hey Hey</button>
+                        <!-- end exo section 3 -->
+
+                        <!-- start exo style Section -->
+                        <button id="jsstyle">Style</button>
+                        <!-- end exo Section -->
+    </form>
+
+    <script>
+        // Section 1
+        document.getElementById("button").ondblclick = function () {
+            alert("click");
+        }
+
+        // Section 2
+        function insertRow() {
+            let row = document.createElement("tr");
+            row.innerHTML = "<td> Row 3 cell 3 </td>  <td> Row4 cell 4 </td>";
+            document.getElementById("sampleTable").append(row);
+        }
+
+        // Section 3 
+        let x = document.getElementById("btn")
+        let y = document.getElementById("btn1")
+
+        // y.addEventListener("click", RespondClick);
+        // y.addEventListener("mouseover", RespondMouseOver);
+
+        // x.addEventListener("click", RespondClick);
+        // x.addEventListener("mouseover", RespondMouseOver);
+        // x.addEventListener("mouseout", RespondMouseOut);
+
+        // function RespondClick() {
+        //     alert("Button Clicked")
+        // }
+
+        // function RespondMouseOver() {
+        //     alert("My mouse is over the btn")
+        // }
+
+        // function RespondMouseOut() {
+        //     alert("My mouse is out of the btn")
+        // }
+
+        y.addEventListener("mouseover", RespondMouseOver);
+
+        x.addEventListener("mouseover", RespondMouseOver);
+
+        function RespondMouseOver(e) {
+            console.log("e", e)
+            // all the properties of the event object
+            console.log("My mouse is over the btn named " + e.target.innerHTML)
+            console.log("e.type: ", e.type)
+            // e.type: mouseover
+            console.log("e.target: ", e.target)
+            // e.target:  <button id=​"btn1">​Hey Hey​</button>​
+        }
+
+        document.getElementById("jsstyle").onmouseenter = function () {
+            document.getElementById("jsstyle").style.color = "red";
+        }
+
+    </script>
+
+
+    <!-- script tag !! -->
     <script src="./script.js"></script>
 </body>
 
