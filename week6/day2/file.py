@@ -55,8 +55,8 @@ if "code" in my_hobbies:
 user_number = input("entrez un nombre")
 if int(user_number) % 3 == 0:
     print("Fizz")  
-if int(user_number) % 5 == 0:
+elif int(user_number) % 5 == 0:
     print("Buzz")
-if int(user_number) % 3 == 0 and int(user_number) % 5 == 0:
+elif int(user_number) % 3 == 0 and int(user_number) % 5 == 0:
     print("Fizz Buzz")
         
