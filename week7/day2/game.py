@@ -17,14 +17,14 @@ res = {
 def display_board():
     arterist_v = "*"
     print("Welcome to TIC TAC TOE ! \n \n TIC TAC TOE ")
-    print(arterist_v*27)
+    print(arterist_v*17)
     print(f"* {board[0]} | {board[1]} | {board[2]} *")
     print("*___|___|___*")
     print(f"* {board[3]} | {board[4]} | {board[5]} *")
     print("*___|___|___*")
     print(f"* {board[6]} | {board[7]} | {board[8]} *")
     print("*___|___|___*")
-    print(arterist_v*27)
+    print(arterist_v*17)
 
 
 print(display_board())
@@ -65,13 +65,15 @@ def player_input(player):
     print(*player1['index'])
 
 
-while flag:
-    if flag:
-        player_input(player1)
-        flag = False
-    else:
-        player_input(player2)
-        flag = True
+# while flag:
+#     if flag:
+player_input(player1)
+player_input(player1)
+player_input(player1)
+#         flag = False
+#     else:
+#         player_input(player2)
+#         flag = True
 
 
 print(display_board())
