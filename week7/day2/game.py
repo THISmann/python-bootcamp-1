@@ -67,9 +67,7 @@ def player_input(player):
 
 # while flag:
 #     if flag:
-player_input(player1)
-player_input(player1)
-player_input(player1)
+# player_input(player1)
 #         flag = False
 #     else:
 #         player_input(player2)
