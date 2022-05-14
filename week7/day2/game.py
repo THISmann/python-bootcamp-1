@@ -27,7 +27,7 @@ def display_board():
     print(arterist_v*17)
 
 
-print(display_board())
+display_board()
 
 
 def player_input(player):
@@ -75,21 +75,22 @@ def player_input(player):
 #         flag = True
 
 
-print(display_board())
-
-
 def check_win():
     flag = True
-    if len(player1['index']) or len(player2['index']) > 2:
-        for x in res.values():
-            if player1['index'] or player2['index'] == x:
-                flag = False
-                print("win")
-            else:
-                print("echec")
+
     while flag:
         player_input(player1)
         player_input(player2)
+        print('index1', player1['index'])
+        print('index2', player2['index'])
+        if len(player1['index']) > 2 or len(player2['index']) > 2:
+            for x in res.values():
+                if player1['index'] or player2['index'] == x:
+                    flag = False
+                    print("win")
+                else:
+                    print("echec")
+            print(display_board())
 
 
 check_win()
