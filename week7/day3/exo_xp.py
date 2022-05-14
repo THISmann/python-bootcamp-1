@@ -97,7 +97,7 @@ def compare_age(lis):
 print(f"The oldest dog is {compare_age(li)}")
 
 
-class Dog():
+class Dog:
     def __init__(self, name, heigth):
         self.name = name
         self.heigth = heigth
@@ -140,3 +140,25 @@ class Song:
 stairway = Song(["There’s a lady who's sure", "all that glitters is gold",
                 "and she’s buying a stairway to heaven"])
 stairway.sing_me_a_song()
+
+
+class Zoo():
+    def __init__(self,  zoo_name):
+        self.zoo_name = {"animal": []}
+
+    def add_animal(self, new_animal):
+        self.lists['animal'].append(new_animal)
+
+    def get_animals(self):
+        for i in self.lists:
+            print(i)
+
+    def sell_animal(animal_sold):
+        if animal_sold in self.lists:
+            self.lists.remove(animal)
+
+    def sort_animals(self):
+        self.lists.sort()
+
+    def get_groups(self):
+        pass
