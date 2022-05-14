@@ -1,7 +1,7 @@
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 player1 = {"name": "X", "index": []}
 player2 = {"name": "0", "index": []}
-flag = True
+
 res = {
     "res1": [0, 1, 2],
     "res2": [3, 4, 5],
@@ -31,8 +31,8 @@ print(display_board())
 
 
 def player_input(player):
-    row = int(input("enter a row :"))
-    col = int(input("enter a colunm :"))
+    row = int(input(f"enter a row for {player['name']}:"))
+    col = int(input(f"enter a colunm for {player['name']}:"))
 
     if col == 0 and row == 0:
         board[0] = player['name']
@@ -62,7 +62,8 @@ def player_input(player):
         board[8] = player['name']
         player['index'].append(8)
 
-    print(*player1['index'])
+    print("player1 index", *player1['index'])
+    print("player2 index", *player2['index'])
 
 
 # while flag:
@@ -78,12 +79,17 @@ print(display_board())
 
 
 def check_win():
-    if len(player1['index'] or player2['index']) > 2:
+    flag = True
+    if len(player1['index']) or len(player2['index']) > 2:
         for x in res.values():
             if player1['index'] or player2['index'] == x:
+                flag = False
                 print("win")
             else:
                 print("echec")
+    while flag:
+        player_input(player1)
+        player_input(player2)
 
 
 check_win()
