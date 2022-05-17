@@ -47,4 +47,6 @@ class Game:
             return 'draw'
 
     def play(self):
-        pass
+        user_item = self.get_user_item()
+        computer_item = self.get_computer_item()
+        self.get_game_result(user_item, computer_item)

@@ -17,7 +17,8 @@ def print_results(results):
 
 
 def main():
-    pass
+    new_game = Game('user')
+    new_game.play()
 
 
 def play():
