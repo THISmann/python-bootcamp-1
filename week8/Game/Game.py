@@ -23,8 +23,6 @@ class Game:
         return ran
 
     def get_game_result(self, user_item, computer_item):
-        computer_item = self.get_computer_item()
-        user_item = self.get_user_item()
         if user_item == "rock" and computer_item == "scissors":
             print(f"{self.user_name} have win ")
             return 'win'
