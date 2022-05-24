@@ -8,8 +8,8 @@
 # print(my_family)
 
 import requests
+import json
 
-requests.get('api_link')
+# requests.get('api_link')
 response = requests.get("http://api.open-notify.org/iss-now.json")
-
 print(response.status_code)
