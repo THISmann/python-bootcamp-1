@@ -4,5 +4,5 @@ class AnagramChecker():
         f =  open(f"{file}", "r")
     
     def is_valid_word(self, word):
-        if word in 
+       # if word in 
          
