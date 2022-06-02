@@ -7,10 +7,10 @@ if __name__ == "__main__":
 
 
 @app.route('/<username>')
-def home():
+def homepage(username):
     return render_template('homepage.html', name=username)
 
 
 @app.route('/articles')
 def articles():
-    return render_template('articles.html', data=['one', 'two'])
+    return render_template('articles.html', datas=['one', 'two'])
