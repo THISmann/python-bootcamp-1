@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Products </title>
+</head>
+
+<body>
+   
+    {% comment %} {% for Product in Products %}
+        <ul> 
+            <li> 
+                <ul> 
+                    <li> {{ Product[ProductId] }} </li>
+                    <li> {{ Product[Category] }} </li>
+                    <li> {{ Product[MainCategory] }} </li>
+                    <li> {{ Product[TaxTarifCode] }} </li>
+                    <li> {{ Product[SupplierName] }} </li>
+                    <li> {{ Product[WeightMeasure] }} </li>
+                    <li> {{ Product[WeightUnit] }} </li>
+                    <li> {{ Product[Description] }} </li>
+                    <li> {{ Product[Name] }} </li>
+                    <li> {{ Product[ProductPicUrl] }} </li>
+                    <li> {{ Product[Status] }} </li>
+                    <li> {{ Product[Quantity] }} </li>
+                    <li> {{ Product[UoM] }} </li>
+                    <li> {{ Product[CurrencyCode] }} </li>
+                    <li> {{ Product[Price] }} </li> 
+                </ul>    
+            </li>
+        </ul>
+    {% endfor %} {% endcomment %}
+
+    {% for Product in Products %}
+        <h3>{{Product[ProductId] }}</h3>
+        {% comment %} <ul>
+            {% for particle in particles[category] %}
+            <li> {{ particle }} </li>
+            {% endfor %}
+        </ul> {% endcomment %}
+    {% endfor %}
+   
+     
+</body>
+
+</html>

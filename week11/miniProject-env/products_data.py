@@ -3,18 +3,21 @@ import json
 
 
 def retrieve_all_products():
-    all_product = 'product.json'
+    all_product = 'products.json'
     with open(all_product, 'r') as file:
-        datas = json.load(all_product)
-        print(datas)
+        datas = json.load(file)
+        return datas
 
-    retrieve_all_products()
 
-# def retrieve_requested_product():
-#     data = retrieve_all_products()
-#     print(data)
-#     for i in data.keys():
-#         print(i)
+def retrieve_requested_product(id):
+    datas = retrieve_all_products()
+    for data in datas:
+        if data['ProductId'] == id:
+            return data
 
-#     datas = retrieve_requested_product()
-#     print(datas)
+
+# datas = retrieve_all_products()
+# print(datas)
+
+data = retrieve_requested_product('HT-1000')
+print(data)
