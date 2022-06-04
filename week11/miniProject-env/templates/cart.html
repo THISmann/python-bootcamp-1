@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='carts.css')}}" />
+    <title> Carts </title>
+</head>
+
+<body>
+    <div>
+        {% block cart %}
+        <div class="cart"> 
+        </div>
+        {% endblock %}
+    </div>
+</body>
+
+</html>

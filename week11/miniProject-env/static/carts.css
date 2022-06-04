@@ -1,0 +1,17 @@
+.cart {
+    width: 50%;
+    height: 400px;
+    padding: 30px;
+    background-color: beige;
+    border: 1px solid black;
+}
+
+.content {
+    height: 80%;
+    margin: 5%;
+}
+
+.footer {
+    height: 18%;
+    margin: 5%;
+}

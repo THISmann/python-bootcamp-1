@@ -17,9 +17,14 @@ def homeUser():
 
 @app.route('/products')
 def Product():
-    return render_template('product.html', Products=donnees)
+    return render_template('products.html', Products=donnees)
 
 
 @app.route('/products/<product_id>')
-def ProductsId(product_id):
-    return render_template('product.html', product_id=product_id)
+def ProductID(product_id):
+    return render_template('product.html', Product=products_data.retrieve_requested_product(product_id))
+
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+

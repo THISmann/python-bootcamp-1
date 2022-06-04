@@ -9,41 +9,25 @@
 </head>
 
 <body>
-   
-    {% comment %} {% for Product in Products %}
-        <ul> 
-            <li> 
-                <ul> 
-                    <li> {{ Product[ProductId] }} </li>
-                    <li> {{ Product[Category] }} </li>
-                    <li> {{ Product[MainCategory] }} </li>
-                    <li> {{ Product[TaxTarifCode] }} </li>
-                    <li> {{ Product[SupplierName] }} </li>
-                    <li> {{ Product[WeightMeasure] }} </li>
-                    <li> {{ Product[WeightUnit] }} </li>
-                    <li> {{ Product[Description] }} </li>
-                    <li> {{ Product[Name] }} </li>
-                    <li> {{ Product[ProductPicUrl] }} </li>
-                    <li> {{ Product[Status] }} </li>
-                    <li> {{ Product[Quantity] }} </li>
-                    <li> {{ Product[UoM] }} </li>
-                    <li> {{ Product[CurrencyCode] }} </li>
-                    <li> {{ Product[Price] }} </li> 
-                </ul>    
-            </li>
-        </ul>
-    {% endfor %} {% endcomment %}
 
-    {% for Product in Products %}
-        <h3>{{Product[ProductId] }}</h3>
-        {% comment %} <ul>
-            {% for particle in particles[category] %}
-            <li> {{ particle }} </li>
-            {% endfor %}
-        </ul> {% endcomment %}
-    {% endfor %}
-   
-     
+    <ul>
+        {% for Product in Products %}
+
+        <li>
+            <ul>
+                <li>{{ Product['ProductId'] }} </li>
+                <li>{{ Product['Category'] }} </li>
+                <li>{{ Product['MainCategory'] }} </li>
+                <li> {{ Product['TaxTarifCode'] }} </li>
+                <li> {{ Product['SupplierName'] }} </li>
+                <li> {{ Product['Price'] }} </li>
+                <a href={{url_for("ProductID" , product_id=Product['ProductId'] )}}> <button> Choose </button> </a>
+            </ul>
+        </li>
+
+        {% endfor %}
+    </ul>
+
 </body>
 
 </html>
