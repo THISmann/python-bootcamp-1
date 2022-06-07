@@ -9,8 +9,21 @@
 <body>
     <div>
         {% block cart %}
-        <div class="cart"> 
+        
+        {% for Product in Products %}
+        <div class="cart">
+            <div class="content">
+                <h2> i am you shop </h2>
+             
+                {% for x,y in Product.items() %}
+                    <li> <span> {{x}} </span> || <span> {{y}} </span> </li>
+                
+                {% endfor %}
+
+                <a href={{ url_for("delete", product_id = Product['ProductId'])}}> <button> Delete </button> </a>
         </div>
+        </div>
+        {% endfor %}
         {% endblock %}
     </div>
 </body>

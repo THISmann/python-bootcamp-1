@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,  redirect, url_for
 import products_data
 
 app = Flask(__name__)
@@ -24,7 +24,16 @@ def Product():
 def ProductID(product_id):
     return render_template('product.html', Product=products_data.retrieve_requested_product(product_id))
 
+
 @app.route('/cart')
 def cart():
-    return render_template('cart.html')
+    return render_template('cart.html',  Products=donnees)
 
+
+@app.route('/delete/<product_id>')
+def delete(product_id):
+    item = products_data.retrieve_requested_product(product_id)
+    index = donnees.index(item)
+    del donnees[index]
+    # redirect(url_for(cart))
+    return render_template('cart.html', prod_id=product_id)
