@@ -1,6 +1,6 @@
 from flask import Flask, render_template,  redirect, url_for
 import products_data
-
+cart_item = []
 app = Flask(__name__)
 
 if __name__ == "__main__":
@@ -37,3 +37,27 @@ def delete(product_id):
     del donnees[index]
     # redirect(url_for(cart))
     return render_template('cart.html', prod_id=product_id)
+
+
+@app.route('/add_product_to_card/<product_id>')
+def addProduct(product_id):
+    product = products_data.retrieve_requested_product(product_id)
+    cart_item.append(product)
+    print(cart_item)
+    return cart_item
+
+@app.route('/delete_product_from_cart/<product_id>')
+def delete(product_id):
+    item = products_data.retrieve_requested_product(product_id)
+    index = cart_item.index(item)
+    del cart_item[index]
+    print(cart_item)
+
+@app.route('/signup')
+def add_user():
+    return render_template('signup.html', signup = {})
+
+@app.route('/login')
+def check_user():
+    return render_template('login.html', login={})
+
