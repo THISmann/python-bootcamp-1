@@ -44,20 +44,27 @@ def addProduct(product_id):
     product = products_data.retrieve_requested_product(product_id)
     cart_item.append(product)
     print(cart_item)
-    return cart_item
+    data = tuple(cart_item)
+    return data
 
-@app.route('/delete_product_from_cart/<product_id>')
-def delete(product_id):
-    item = products_data.retrieve_requested_product(product_id)
-    index = cart_item.index(item)
-    del cart_item[index]
-    print(cart_item)
+
+# @app.route('/delete_product_from_cart/<product_id>')
+# def delete(product_id):
+#     item = products_data.retrieve_requested_product(product_id)
+#     index = cart_item.index(item)
+#     del cart_item[index]
+#     print(cart_item)
+
 
 @app.route('/signup')
 def add_user():
-    return render_template('signup.html', signup = {})
+    return render_template('signup.html', signup={})
+
 
 @app.route('/login')
 def check_user():
+    if request.method == 'POST':
+        session['username'] = request.form['username']
+        return redirect(url_for('homeUser'))
+    
     return render_template('login.html', login={})
-
