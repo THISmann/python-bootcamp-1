@@ -1,7 +1,8 @@
-from flask import Flask, render_template,  redirect, url_for
+from flask import Flask, render_template,  redirect, url_for, session, request
 import products_data
 cart_item = []
 app = Flask(__name__)
+app.secret_key = "any random string"
 
 if __name__ == "__main__":
     app.run(debug=True, port=5500)
@@ -66,5 +67,10 @@ def check_user():
     if request.method == 'POST':
         session['username'] = request.form['username']
         return redirect(url_for('homeUser'))
-    
     return render_template('login.html', login={})
+
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('homeUser'))
