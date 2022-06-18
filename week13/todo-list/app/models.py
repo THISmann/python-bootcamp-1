@@ -17,9 +17,8 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     details = db.Column(db.String(64), index=True)
     
-    def save_task_to_db(self, id , detail):
-        model = self(id=id, details=detail)
-        db.session.add(model1)
+    def save_task_to_db(self):
+        db.session.add(self)
         db.session.commit()
         
 
