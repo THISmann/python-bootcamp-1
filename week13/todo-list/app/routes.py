@@ -5,8 +5,9 @@ from app import app, db
 from app.models import MyModel , Todo
 
 @app.route("/")
-def hello_world():
-    return "Hello, World youande!"
+def index():
+    Todo.save_task_to_db()
+    return flask.render_template('index.html')
 
 
 
