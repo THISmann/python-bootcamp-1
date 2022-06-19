@@ -3,9 +3,9 @@ import os
 import flask_sqlalchemy
 import flask_migrate
 
-from app import app
+from app import app, db
 
-db = flask_sqlalchemy.SQLAlchemy(app)
+# db = flask_sqlalchemy.SQLAlchemy(app)
 migrate = flask_migrate.Migrate(app, db)
 
 class MyModel(db.Model):
@@ -23,9 +23,9 @@ class Todo(db.Model):
         db.session.commit()
         
     def get_tasks(self):
-        return self.query.all()
+         return self.query.all()
 
-    def set_task_as_complete(self):
-        pass
+    # def set_task_as_complete(self):
+    #     pass
     
     db.create_all()

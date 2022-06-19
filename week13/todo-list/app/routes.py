@@ -23,4 +23,4 @@ def index():
 # db.session.add(Todo(id=1 , details="TP 22"))
 # db.session.commit()
 
-print(Todo.query.all())
+#print(Todo.query.all())
