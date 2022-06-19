@@ -15,10 +15,17 @@ class MyModel(db.Model):
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    details = db.Column(db.String(64), index=True)
+    details = db.Column(db.String(64), index=True) 
+    completed = db.Column(db.Boolean, index=True, default=False , nullable=False)
     
     def save_task_to_db(self):
         db.session.add(self)
         db.session.commit()
         
+    def get_tasks(self):
+        return self.query.all()
 
+    def set_task_as_complete(self):
+        pass
+    
+    db.create_all()
