@@ -31,18 +31,18 @@ class Todo(db.Model):
     def get_tasks():
         return Todo.query.all()
 
-    def update_task(id, detail):
-        task = Todo.query.get(id)
+    def update_task(todo_id, detail):
+        task = Todo.query.get(todo_id)
         task.details = detail
         db.session.commit()
 
-    def set_task_as_complete(id):
-        todo = Todo.query.get(id)
+    def set_task_as_complete(todo_id):
+        todo = Todo.query.get(todo_id)
         todo.completed = True
         db.session.commit()
 
-    def delete_task(id):
-        task = Todo.query.get(id)
+    def delete_task(todo_id):
+        task = Todo.query.get(todo_id)
         db.session.delete(task)
         db.session.commit()
 
