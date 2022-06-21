@@ -13,10 +13,10 @@ def index():
         Todo.save_task_to_db(Todo)
         return flask.render_template('index.html', form = users)
     else:
-        Todo.get_tasks()
-        return flask.render_template('index.html')
+        Todo.get_tasks(Todo)
+        return flask.render_template('index.html', form = users)
         
-@app.route("complete/<int:todo_id>")
+@app.route("/complete/<int:todo_id>")
 def set_task_as_complete(): 
     todo = Todo.query(todo_id)
     todo.completed = True

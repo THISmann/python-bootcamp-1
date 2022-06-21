@@ -19,7 +19,7 @@ class Todo(db.Model):
     completed = db.Column(db.Boolean, index=True, default=False , server_default="false")
     
     def __repr__(self):
-        return '<User %r>' % self.id
+        return '<Todo %r>' % self.id
     
     def save_task_to_db(self):
         db.session.add(self)
@@ -30,5 +30,30 @@ class Todo(db.Model):
 
     # def set_task_as_complete(self):
     #     pass
+    
+    # def __init__(self, email, password):
+    #     self.email = email
+    #     self.set_password(password)
+
+    # def __repr__(self):
+    #     return '<User %r>' % self.email
+
+    # def set_password(self, password):
+    #     self.password_hash = generate_password_hash(password)
+
+    # def check_password(self, password):
+    #     return check_password_hash(self.password_hash, password)
+
+    # def is_authenticated(self):
+    #     return True
+
+    # def is_active(self):
+    #     return True
+
+    # def is_anonymous(self):
+    #     return False
+
+    # def get_id(self):
+    #     return str(self.email)
     
     db.create_all()
