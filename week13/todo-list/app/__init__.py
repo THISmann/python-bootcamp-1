@@ -1,7 +1,7 @@
 import flask
 import os
 import flask_sqlalchemy
-import flask_migrate
+import flask_migrate 
 
 # Remember: __name__ is the name of the file where the code is written
 app = flask.Flask(__name__)
