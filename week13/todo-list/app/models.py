@@ -24,13 +24,23 @@ class Todo(db.Model):
     def __repr__(self):
         return '<Todo %r>' % self.id
 
-    def save_task_to_db(seft, data):
+    def save_task_to_db(data):
         db.session.add(data)
         db.session.commit()
 
-    def get_tasks(self):
-        return self.query.all()
-
+    def get_tasks():
+        return Todo.query.all()
+    
+    def update_task(id , detail):
+        task = Todo.query.get(id)
+        task.details = detail
+        db.session.commit()
+    
+    def set_task_as_complete(id):
+        todo = Todo.query.get(id)
+        todo.completed = True
+        db.session.commit()
+        
     # def set_task_as_complete(self):
     #     pass
 
