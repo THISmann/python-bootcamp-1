@@ -22,7 +22,7 @@ def index():
 
 @app.route("/complete/<int:todo_id>")
 def set_task_as_complete():
-    todo = Todo.set_task_as_complete(todo_id)
+    Todo.set_task_as_complete(todo_id)
     return "Task Completed \|-|/ "
 
 
@@ -30,6 +30,13 @@ def set_task_as_complete():
 def get_all():
     tasks = Todo.get_tasks()
     return flask.render_template('tasks.html', data=tasks)
+
+
+@app.route("/delete/<int:todo_id>")
+def delete_task():
+    Todo.delete_task(todo_id)
+    return "Task deleted \|-|/ "
+
 
 # todos = MyModel.query.all()
 # db.session.add(Todo(id=1 , details="TP 22"))
