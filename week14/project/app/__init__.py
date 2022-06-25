@@ -9,8 +9,9 @@ app = flask.Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app.config['SECRET_KEY'] = 'my_name'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.db')
-#This line is adding sqlite:/// with the path of your database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
+    os.path.join(basedir, 'app.db')
+# This line is adding sqlite:/// with the path of your database
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

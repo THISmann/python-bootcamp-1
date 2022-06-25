@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from app.login import Login
 from app.register import Register
 from app.create_task import CreateTask
+from app.models import Task
 import flask
 import flask_wtf
 import wtforms
@@ -42,7 +43,7 @@ def register():
     return flask.render_template("register.html", register=register)
 
 
-@app.route("/create-task")
+@app.route("/create-task", methods=("GET", "POST"))
 def create_task():
     create_task = CreateTask()
     if create_task.validate_on_submit():
@@ -53,6 +54,11 @@ def create_task():
         author = create_task.author.data
         description = create_task.description.data
         status = create_task.status.data
+
+        data = Task(name=name, executant=executant, date_start=date_start,
+                    date_end=date_end, author=author, description=description, status=status)
+        db.session.add(data)
+        db.session.commit()
 
     return flask.render_template("create-task.html", new_task=create_task)
 

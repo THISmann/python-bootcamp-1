@@ -2,6 +2,7 @@ import flask
 import os
 import flask_sqlalchemy
 import flask_migrate
+from datetime import datetime
 
 from app import app, db
 
@@ -16,14 +17,14 @@ class MyModel(db.Model):
 
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.relationship('User', backref='task', lazy="dynamic")
+    name = db.Column(db.String(64), index=True)
+    #name = db.relationship('User', backref='task', lazy="dynamic")
     executant = db.Column(db.String(64), index=True)
-    date_end = db.Column(db.String(64), index=True)
-    data_start = db.Column(db.String(64), index=True)
+    date_end = db.Column(db.DateTime, index=True, default=datetime.now)
+    date_start = db.Column(db.DateTime, index=True, default=datetime.now)
     author = db.Column(db.String(64), index=True)
     description = db.Column(db.String(64), index=True)
-    status = db.Column(db.String(64), index=True)
-    author = db.Column(db.String(64), index=True)  # relationship
+    status = db.Column(db.String(64), index=True)  # relationship
 
 
 class User(db.Model):
@@ -34,7 +35,7 @@ class User(db.Model):
     status_session = db.Column(db.String(64), index=True)
     role = db.Column(db.String(64), index=True)
     task = db.Column(db.String(64), db.ForeignKey('task.id'))
-    author = db.Column(db.String(64), db.ForeignKey('task.id'))
+    #author = db.Column(db.String(64), db.ForeignKey('task.id'))
 
 
 class Rode(db.Model):

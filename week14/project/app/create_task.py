@@ -9,11 +9,11 @@ class CreateTask(flask_wtf.FlaskForm):
     executant = wtforms.StringField(
         "Executant", [wtforms.validators.Length(min=4, max=25)])
 
-    date_start = wtforms.StringField(
-        "Date_start", [wtforms.validators.Length(min=4, max=25)])
+    date_start = wtforms.DateField(
+        "Date_start")
 
-    date_end = wtforms.StringField(
-        "Date_end", [wtforms.validators.Length(min=4, max=25)])
+    date_end = wtforms.DateField(
+        "Date_end")
 
     author = wtforms.StringField(
         "Author", [wtforms.validators.Length(min=4, max=25)])
