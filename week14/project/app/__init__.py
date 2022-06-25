@@ -9,8 +9,8 @@ app = flask.Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app.config['SECRET_KEY'] = 'my_name'
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.db')
-# This line is adding sqlite:/// with the path of your database
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.db')
+#This line is adding sqlite:/// with the path of your database
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -19,13 +19,13 @@ migrate = flask_migrate.Migrate(app, db)
 db.create_all()
 
 # database connection
-db_info = {
-    'host': 'localhost',
-    'database': 'my_db',
-    'psw': 'THISmann',
-    'user': 'root',
-    'port': ''
-}
+# db_info = {
+#     'host': 'localhost',
+#     'database': 'my_db',
+#     'psw': 'THISmann',
+#     'user': 'root',
+#     'port': ''
+# }
 
-app.config[
-    'SQLALCHEMY_DATABASE_URI'] = f"postgresql://{db_info['user']}:{db_info['psw']}@{db_info['host']}/{db_info['database']}"
+# app.config[
+#     'SQLALCHEMY_DATABASE_URI'] = f"postgresql://{db_info['user']}:{db_info['psw']}@{db_info['host']}/{db_info['database']}"
