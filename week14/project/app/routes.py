@@ -1,4 +1,7 @@
 from flask import Flask, request, jsonify
+from app.login import Login
+from app.register import Register
+from app.create_task import CreateTask
 import flask
 import flask_wtf
 import wtforms
@@ -14,19 +17,44 @@ def index():
     return flask.render_template("index.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=("GET", "POST"))
 def login():
-    return flask.render_template("login.html")
+    login = Login()
+    if login.validate_on_submit():
+        username = login.username.data
+        password = login.password.data
+
+        print(username, password)
+
+    return flask.render_template("login.html", login=login)
 
 
-@app.route("/register")
+@app.route("/register", methods=("GET", "POST"))
 def register():
-    return flask.render_template("register.html")
+    register = Register()
+    if register.validate_on_submit():
+        username = register.username.data
+        email = register.email.data
+        password = register.password.data
+
+        print(username, email, password)
+
+    return flask.render_template("register.html", register=register)
 
 
 @app.route("/create-task")
 def create_task():
-    return flask.render_template("create-task.html")
+    create_task = CreateTask()
+    if create_task.validate_on_submit():
+        name = create_task.name.data
+        executant = create_task.executant.data
+        date_start = create_task.date_start.data
+        date_end = create_task.date_end.data
+        author = create_task.author.data
+        description = create_task.description.data
+        status = create_task.status.data
+
+    return flask.render_template("create-task.html", new_task=create_task)
 
 
 @app.route("/all-task")

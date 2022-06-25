@@ -10,6 +10,23 @@
 
 <body>
     <p> bonjour  wait you login time  </p>
+
+   
+
+    {% block content %}
+    <form method="POST">
+        {{ login.hidden_tag() }}
+        
+        {{ login.username.label }}
+        {{ login.username(size=32) }}
+        
+        {{ login.password.label }}
+        {{ login.password(size=32) }} 
+        
+        {{ login.submit() }}
+    </form>
+    {% endblock %}
+
 </body>
 
 </html>

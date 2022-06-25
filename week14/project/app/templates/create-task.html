@@ -9,7 +9,39 @@
 </head>
 
 <body>
-    <p> create task is not available !!! </p>
+    <p> bonjour  wait you new_task time  </p>
+
+   
+
+    {% block content %}
+    <form method="POST">
+        {{ new_task.hidden_tag() }}
+        
+        {{ new_task.name.label }}
+        {{ new_task.name(size=32) }}
+
+        {{ new_task.executant.label }}
+        {{ new_task.executant(size=32) }}
+
+        {{ new_task.date_start.label }}
+        {{ new_task.date_start(size=32) }} 
+
+        {{ new_task.date_end.label }}
+        {{ new_task.date_end(size=32) }} 
+        
+        {{ new_task.author.label }}
+        {{ new_task.author(size=32) }} 
+
+        {{ new_task.description.label }}
+        {{ new_task.description(size=32) }} 
+
+        {{ new_task.status.label }}
+        {{ new_task.status(size=32) }} 
+        
+        {{ new_task.submit() }}
+    </form>
+    {% endblock %}
+
 </body>
 
 </html>

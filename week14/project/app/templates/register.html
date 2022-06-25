@@ -9,7 +9,27 @@
 </head>
 
 <body>
-    <p> bonjour {{ username }} you wan to register ??</p>
+    <p> bonjour  wait you register time  </p>
+
+   
+
+    {% block content %}
+    <form method="POST">
+        {{ register.hidden_tag() }}
+        
+        {{ register.username.label }}
+        {{ register.username(size=32) }}
+
+        {{ register.email.label }}
+        {{ register.email(size=32) }} 
+        
+        {{ register.password.label }}
+        {{ register.password(size=32) }} 
+        
+        {{ register.submit() }}
+    </form>
+    {% endblock %}
+
 </body>
 
 </html>
