@@ -18,17 +18,44 @@ def index():
     return flask.render_template("index.html")
 
 
-@app.route("/login", methods=("GET", "POST"))
+# @app.route("/login", methods=("GET", "POST"))
+# def login():
+#     login = Login()
+#     if login.validate_on_submit():
+#         username = login.username.data
+#         password = login.password.data
+#         if flask_login.current_user.is_authenticated:
+#             return flask.redirect(url_for('index'))
+
+
+#     return flask.render_template("login.html", login=login)
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    login = Login()
-    if login.validate_on_submit():
-        username = login.username.data
-        password = login.password.data
+    if flask_login.current_user.is_authenticated: # Check if the user is not already logged in 
+        return flask.redirect(url_for('index'))
 
-        print(username, password)
+    form = forms.LoginForm() # Load the form
 
-    return flask.render_template("login.html", login=login)
+    if form.validate_on_submit(): 
+        # Retrieve the user with the username
+        user = models.User.query.filter_by(username=form.username.data).first()
 
+        # Check if it exist and if the password is the right password
+        if user is None or not user.password == form.password.data:
+            flask.flash('Invalid username or password')
+            return flask.redirect(url_for('login'))
+
+        # Log the user in
+        flask_login.login_user(user, remember=form.remember_me.data)
+        return flask.redirect(url_for('index'))
+
+    return flask.render_template('login.html', title='Sign In', login=form) # Render the form
+
+@app.route('/logout')
+def logout():
+    flask_login.logout_user()
+    return flask.redirect(url_for('index'))
 
 @app.route("/register", methods=("GET", "POST"))
 def register():

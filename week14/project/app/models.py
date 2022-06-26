@@ -3,8 +3,8 @@ import os
 import flask_sqlalchemy
 import flask_migrate
 from datetime import datetime
-
-from app import app, db
+import flask_login
+from app import app, db,   models
 
 # db = flask_sqlalchemy.SQLAlchemy(app)
 migrate = flask_migrate.Migrate(app, db)
@@ -27,7 +27,7 @@ class Task(db.Model):
     status = db.Column(db.String(64), index=True)  # relationship
 
 
-class User(db.Model):
+class User(flask_login.UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True)
     email = db.Column(db.String(64), index=True)
@@ -37,7 +37,10 @@ class User(db.Model):
     task = db.Column(db.String(64), db.ForeignKey('task.id'))
     #author = db.Column(db.String(64), db.ForeignKey('task.id'))
 
+    def get_id(self):
+        return self.id
 
-class Rode(db.Model):
+
+class Role(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True)
