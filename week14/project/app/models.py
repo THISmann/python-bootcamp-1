@@ -5,7 +5,7 @@ import flask_migrate
 from datetime import datetime
 import flask_login
 from app import app, db,   models
-from flask_login import login_manager
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 
 # db = flask_sqlalchemy.SQLAlchemy(app)
 migrate = flask_migrate.Migrate(app, db)
@@ -28,6 +28,16 @@ class Task(db.Model):
     status = db.Column(db.String(64), index=True)  # relationship
 
 
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.get(user_id)
+
+
 class User(flask_login.UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True)
@@ -40,10 +50,6 @@ class User(flask_login.UserMixin, db.Model):
 
     def get_id(self):
         return self.id
-
-    @login_manager.user_loader
-    def load_user(id):
-        return User.get(id)
 
 
 class Role(db.Model):

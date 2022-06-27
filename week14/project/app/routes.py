@@ -1,8 +1,8 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, url_for
 from app.login import Login
 from app.register import Register
 from app.create_task import CreateTask
-from app.models import Task
+from app.models import Task, User
 import flask
 import flask_wtf
 import wtforms
@@ -41,7 +41,7 @@ def login():
 
     if form.validate_on_submit():
         # Retrieve the user with the username
-        user = models.User.query.filter_by(username=form.username.data).first()
+        user = User.query.filter_by(username=form.username.data).first()
 
         # Check if it exist and if the password is the right password
         if user is None or not user.password == form.password.data:
