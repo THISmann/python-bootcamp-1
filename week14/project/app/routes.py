@@ -7,6 +7,7 @@ import flask
 import flask_wtf
 import wtforms
 from app import app, db
+import flask_login
 #from flask_user import roles_required
 
 # from app.forms import Addtodo
@@ -30,14 +31,15 @@ def index():
 
 #     return flask.render_template("login.html", login=login)
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if flask_login.current_user.is_authenticated: # Check if the user is not already logged in 
+    if flask_login.current_user.is_authenticated:  # Check if the user is not already logged in
         return flask.redirect(url_for('index'))
 
-    form = forms.LoginForm() # Load the form
+    form = Login()  # Load the form
 
-    if form.validate_on_submit(): 
+    if form.validate_on_submit():
         # Retrieve the user with the username
         user = models.User.query.filter_by(username=form.username.data).first()
 
@@ -50,12 +52,15 @@ def login():
         flask_login.login_user(user, remember=form.remember_me.data)
         return flask.redirect(url_for('index'))
 
-    return flask.render_template('login.html', title='Sign In', login=form) # Render the form
+    # Render the form
+    return flask.render_template('login.html', title='Sign In', login=form)
+
 
 @app.route('/logout')
 def logout():
     flask_login.logout_user()
     return flask.redirect(url_for('index'))
+
 
 @app.route("/register", methods=("GET", "POST"))
 def register():

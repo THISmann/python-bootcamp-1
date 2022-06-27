@@ -2,6 +2,7 @@ import flask
 import os
 import flask_sqlalchemy
 import flask_migrate
+from flask_login import LoginManager
 
 # Remember: __name__ is the name of the file where the code is written
 app = flask.Flask(__name__)
@@ -18,6 +19,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = flask_sqlalchemy.SQLAlchemy(app)
 migrate = flask_migrate.Migrate(app, db)
 db.create_all()
+
+login_mngr = LoginManager(app)
+login_mngr.login_view = 'login'
 
 # database connection
 # db_info = {

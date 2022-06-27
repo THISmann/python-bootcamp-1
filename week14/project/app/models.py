@@ -5,6 +5,7 @@ import flask_migrate
 from datetime import datetime
 import flask_login
 from app import app, db,   models
+from flask_login import login_manager
 
 # db = flask_sqlalchemy.SQLAlchemy(app)
 migrate = flask_migrate.Migrate(app, db)
@@ -39,6 +40,10 @@ class User(flask_login.UserMixin, db.Model):
 
     def get_id(self):
         return self.id
+
+    @login_manager.user_loader
+    def load_user(id):
+        return User.get(id)
 
 
 class Role(db.Model):
