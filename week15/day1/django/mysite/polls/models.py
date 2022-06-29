@@ -10,3 +10,12 @@ class Person(models.Model):
     birth_date = models.DateField()
     has_pet = models.BooleanField(default=True)
     #number_pet = models.IntegerField(max_value=10)
+
+
+class Task(models.Model):
+    task_name = models.CharField(max_length=30)
+    task_role = models.CharField(max_length=30)
+    date_start = models.DateField()
+    date_end = models.DateField()
+    done_task = models.BooleanField()
+    number_hour = models.IntegerField()
