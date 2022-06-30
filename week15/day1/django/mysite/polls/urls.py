@@ -3,9 +3,9 @@ from . import views  # . is shorthand for the current directory
 
 # one urlpattern per line
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('home/', views.home, name='home'),
-    path('test/', views.test, name='test'),
+    path('', views.index, name='index'), 
+    path('test/', views.home, name='home'),
+    path('posts/', views.posts, name='posts'),
     # path('about_website/', views.about, name='about'),
 ]
 

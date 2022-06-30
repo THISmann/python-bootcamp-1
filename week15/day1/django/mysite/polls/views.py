@@ -1,42 +1,26 @@
 from django.shortcuts import render
+from .models import Person, Post # import the models from polls/models.py
 
-# Create your views here.
-from django.http import HttpResponse  # pass view information into the browser
-
-# takes a request, returns a response
+person = Person.objects.filter(first_name="Maria", 
+                               last_name = "Fez").first() 
+                    # get the first object because Person.objects.filter returns a QuerSet (ie. a list)
 
 
 def index(request):
-    user = {
-        'first_name': "John",
-        'last_name': "Doe"
-    }
-
-    subjects = [
-        {
-            'title': "How to setup Django",
-            'author': "Maria"
-        },
-        {
-            'title': "How to cake an amazing pie",
-            'author': "Chef Mark"
-        }
-    ]
-
     context = {
-        'user': user,
-        'subjects': subjects
+        'page_title' : "Homepage",
+        'user' : person
     }
-    return render(request, "post/homepage.html", context)
+    return render(request, 'posts/homepage.html', context)
 
+def posts(request):
+    context = {
+        'page_title' : "Posts",
+        'posts' : Post.objects.filter(
+            author__first_name=person.first_name,   
+            author__last_name=person.last_name)
+    }
+    return render(request, 'posts/posts.html', context)
 
 def home(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-
-
-def test(request):
-    return render(request, "index.html", {})
-
-
-def about(request):
-    return HttpResponse('<h1> Sort de mon coeur !!! </h1>')
+    return "welcome to the home page !!! "
