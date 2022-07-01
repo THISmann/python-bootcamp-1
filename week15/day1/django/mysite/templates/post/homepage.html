@@ -8,9 +8,15 @@
     <h2>Welcome to my website</h2> 
     <h4>Today we are going to talk about</h4> 
     <ul> 
-        {% for x in subjects %} 
-        <li>{{ x.title | title }} by {{ x.author}}</li> 
-        {% endfor %} 
+        {% block content %}
+        <h1>
+        <img alt="image_profile_{{user.first_name}}_{{user.last_name}}"
+        src={{user.imageprofile.image}} width=30>
+        Hello {{user.first_name}} {{user.last_name}}
+        </h1>
+
+        <h2>Welcome to my website</h2> 
+    {% endblock content %}
     </ul>
 </body>
 </html>

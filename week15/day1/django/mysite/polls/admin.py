@@ -6,3 +6,5 @@ from .models import *  # import the Person model
 admin.site.register(Person)
 admin.site.register(Task)
 admin.site.register(Post)
+admin.site.register(ImageProfile)
+admin.site.register(Email)
