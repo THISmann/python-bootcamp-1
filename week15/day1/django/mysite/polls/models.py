@@ -73,3 +73,5 @@ class Email(models.Model):
 
     def __str__(self):
         return f'Email of {self.person}'
+
+ 

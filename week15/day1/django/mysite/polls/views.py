@@ -1,3 +1,4 @@
+from .forms import ContactForm
 from django.shortcuts import render
 from .models import Person, Post  # import the models from polls/models.py
 from rest_framework import viewsets          # add this
@@ -48,3 +49,29 @@ def posts(request):
 
 def home(request):
     return "welcome to the home page !!! "
+
+
+def contact(request):
+    context = {
+        'page_title': "Contact",
+        'user': person,
+        'form': ContactForm()
+
+    }
+    # if the submit button was clicked
+    if request.method == 'POST':
+        # POST, generate form with data from the request
+        form = ContactForm(request.POST)
+        # check if it's valid:
+        if form.is_valid():
+            # get the value of the fields
+            form_name = form['name'].value
+            form_email = form['email'].value
+            form_comment = form['comment'].value
+            context['formInfo'] = [form_name, form_email, form_comment]
+            # render to a the same url, but with new data:
+            return render(request, 'post/contact.html', context)
+    else:
+        # GET, generate blank form
+        context['form'] = ContactForm()
+    return render(request, 'post/contact.html', context)

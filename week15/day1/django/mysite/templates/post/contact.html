@@ -1,0 +1,29 @@
+<body>
+    {% block content %}
+    {{ page_title|default:"Contact" }}
+        <h1>
+            <img alt="image_profile_{{user.first_name}}_{{user.last_name}}"
+            src={{user.imageprofile.image}} width=30>
+            Hello {{user.first_name}} {{user.last_name}}
+        </h1>
+        <h2>Welcome to my website</h2> 
+    {% endblock content %}
+
+    
+      <form method="POST">
+      {% csrf_token %}
+
+      <table>
+        {{form.as_table}}
+      </table>
+      <input type="submit" value="Submit form">
+    </form>
+
+    {% if formInfo %}
+        {% for info in formInfo %} 
+        <ul class="list">
+            <li>{{ info }}</li>
+        </ul>
+        {% endfor %} 
+    {% endif %} 
+</body>
