@@ -1,5 +1,27 @@
 from django.shortcuts import render
 from .models import Person, Post  # import the models from polls/models.py
+from rest_framework import viewsets          # add this
+from rest_framework.serializers import *     # add this
+from .models import Task
+from .serialazers import *
+from rest_framework.permissions import AllowAny
+from rest_framework_simplejwt.views import TokenObtainPairView
+
+
+class TasksView(viewsets.ModelViewSet):
+    serializer_class = TaskSerializer
+    queryset = Task.objects.all()
+
+
+class PostsView(viewsets.ModelViewSet):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+
+
+class MyObtainTokenPairView(TokenObtainPairView):
+    permission_classes = (AllowAny,)
+    serializer_class = MyTokenObtainPairSerializer
+
 
 person = Person.objects.filter(first_name="Maria",
                                last_name="Fez").first()
