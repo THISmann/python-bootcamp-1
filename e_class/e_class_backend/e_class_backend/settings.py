@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'devoir',
     'forum',
     'note',
-    'presence'
+    'presence',
+    'e_class_backend'
 ]
 
 MIDDLEWARE = [
