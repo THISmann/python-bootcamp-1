@@ -19,3 +19,10 @@ class Teacher(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length=200)
     #topic = models.ForeignKey(Topic, on_delete=models.PROTECT)
+    
+class Parents(models.Model):
+    username = models.CharField(max_length=250)
+    phone = models.IntegerField(max_length=200)
+    email = models.EmailField(max_length=255)
+    student_name = models.ForeignKey(Student , on_delete=models.PROTECT)
+
