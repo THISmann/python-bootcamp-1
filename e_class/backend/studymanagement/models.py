@@ -21,7 +21,7 @@ class Course(models.Model):
         return self.name
 
 
-class homework(models.Model):
+class Homework(models.Model):
     #topic = models.ManyToManyField(to=topic )
     #course = models.ManyToManyField()
     #classe = models.ManyToManyField()
@@ -36,7 +36,7 @@ class homework(models.Model):
     pass
 
 
-class topic(models.Model):
+class Topic(models.Model):
     name = models.CharField(max_length=255)
     # class = models.ManyToManyField()
     #instructor = models.ManyToManyField()
