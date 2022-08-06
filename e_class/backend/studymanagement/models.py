@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime, date
+from backend.authentification.models import *
 
 # Create your models here.
 
