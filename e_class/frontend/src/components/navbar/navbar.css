@@ -1,3 +1,17 @@
 .navbar {
-    color: black;
+    width: 100%;
+    margin: 0px;
+    height: 20px;
+    background-color: #a1a9ae;
+    padding: 5%;
+    color: #a1a9ae;
+}
+
+.navbar-list {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-list li {
+    margin: 10px;
 }

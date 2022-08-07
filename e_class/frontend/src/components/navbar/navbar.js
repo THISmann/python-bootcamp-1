@@ -5,7 +5,12 @@ function Navbar(props) {
     return (
         <>
             <div className="navbar" >
-                <h1> navbar</h1>
+                <ul className="navbar-list">
+                    <li> logo </li>
+                    <li>home</li>
+                    <li>about</li>
+                    <li>service</li>
+                </ul>
             </div>
         </>
     );
