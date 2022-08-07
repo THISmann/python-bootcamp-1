@@ -6,7 +6,7 @@ from datetime import datetime, date
 
 class Student(models.Model):
     username = models.CharField(max_length=200)
-    #classe = models.ForeignKey(Classe, on_delete=models.PROTECT)
+    classe = models.ForeignKey(Classe, on_delete=models.PROTECT)
     email = models.EmailField()
     password = models.CharField(max_length=200)
     phone_numero = models.IntegerField()
