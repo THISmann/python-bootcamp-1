@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime, date
-from studymanagement.models import *
+#from studymanagement.models import *
 # Create your models here.
 
 
@@ -35,7 +35,7 @@ class Teacher(models.Model):
 
 class Parents(models.Model):
     username = models.CharField(max_length=250)
-    phone = models.IntegerField(max_length=200)
+    phone = models.IntegerField()
     email = models.EmailField(max_length=255)
     students = models.ForeignKey(Student, on_delete=models.PROTECT)
 

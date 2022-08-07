@@ -1,8 +1,18 @@
 from django.db import models
 from datetime import datetime, date
-from backend.authentification.models import *
+from authentifications.models import Teacher
+from backend import *
 
 # Create your models here.
+
+
+class Classe(models.Model):
+    name = models.CharField(max_length=255)
+    #head_teacher = models.ForeignKey(to, on_delete)
+    # define the head teacher who will manage the class
+
+    def __str__(self):
+        return self.name
 
 
 class Course(models.Model):
@@ -12,10 +22,9 @@ class Course(models.Model):
     password = models.CharField(max_length=200)
     phone_numero = models.IntegerField()
     content = models.CharField(max_length=255)
-    #instructor = models.ForeignKey(to=Instructor)
+    Teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT)
     create_at = models.DateField(max_length=55)
     number_of_hour = models.IntegerField()
-
     #etablissement = models.ForeignKey(Etablissement)
 
     def __str__(self):
@@ -39,13 +48,11 @@ class Homework(models.Model):
 
 class Topic(models.Model):
     name = models.CharField(max_length=255)
-    # class = models.ManyToManyField()
+    #classes = models.ForeignKey(Classe, on_delete=models.PROTECT)
     #instructor = models.ManyToManyField()
 
     def __str__(self):
         return self.name
-
-    pass
 
 
 class School(models.Model):
@@ -53,14 +60,3 @@ class School(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Class(models.Model):
-    name = models.CharField(max_length=255)
-    #head_teacher = models.ForeignKey(to, on_delete)
-    # define the head teacher who will manage the class
-
-    def __str__(self):
-        return self.name
-
-    pass
