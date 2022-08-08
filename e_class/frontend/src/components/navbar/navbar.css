@@ -10,7 +10,7 @@
 
 
 .logo-img {
-    margin-left: 110px;
+    margin-left: 60px;
     width: 80px;
 }
 
@@ -24,7 +24,7 @@
     width: 150px;
 }
 
-.navbar-list .getStarted {  
+.navbar-list .getStarted {
     padding: 8px;
     border-radius: 15px;
     height: 40px;
@@ -33,6 +33,6 @@
     margin-top: 14px;
     color: #29b68d;
     background-color: #efefef;
-    border-radius: 10px; 
-    border: 0px ;
+    border-radius: 10px;
+    border: 0px;
 }
