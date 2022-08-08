@@ -17,3 +17,23 @@
 .head2 {
     width: 650px;
 }
+
+.rigth h1 {
+    margin-bottom: 35px;
+}
+
+.rigth p {
+    width: 65%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.rigth button {
+    width: auto;
+    height: 50px;
+    color: #29b68d;
+    background-color: #5c5d5e #29b68d;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0px ;
+}

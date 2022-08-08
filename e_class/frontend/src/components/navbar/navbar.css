@@ -24,13 +24,15 @@
     width: 150px;
 }
 
-.navbar-list .getStarted {
-    background-color: #29b68d;
-    border: 0.5px solid #243643;
+.navbar-list .getStarted {  
     padding: 8px;
     border-radius: 15px;
     height: 40px;
     margin-top: 1px;
     width: 200px;
     margin-top: 14px;
+    color: #29b68d;
+    background-color: #efefef;
+    border-radius: 10px; 
+    border: 0px ;
 }
