@@ -5,8 +5,7 @@ import Navbar from "../../components/navbar/Navbar";
 function Home(props) {
     return (
         <>
-            <h1> home </h1>
-            <Navbar />
+            <Navbar className="nav" />
         </>
     );
 }

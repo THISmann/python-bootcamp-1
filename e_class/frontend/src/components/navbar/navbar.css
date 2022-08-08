@@ -2,16 +2,35 @@
     width: 100%;
     margin: 0px;
     height: 20px;
-    background-color: #a1a9ae;
     padding: 5%;
-    color: #a1a9ae;
+    color: #243643;
+    display: flex;
+}
+
+.logo {
+    width: 60%;
+}
+
+.logo-img {
+    margin-left: 110px;
+    width: 80px;
 }
 
 .navbar-list {
+    width: 40%;
     display: flex;
     list-style: none;
 }
 
 .navbar-list li {
-    margin: 10px;
+    margin: 15px;
+}
+
+.navbar-list .getStarted {
+    background-color: #29b68d;
+    border: 0.5px solid #243643;
+    padding: 8px;
+    border-radius: 15px;
+    height: 20px;
+    margin-top: 1px;
 }
