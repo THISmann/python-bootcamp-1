@@ -1,4 +1,9 @@
 .nav {
-    width: 100%;
+    width: max-content;
+    margin: 0px;
+}
+
+.header {
+    width: max-content;
     margin: 0px;
 }

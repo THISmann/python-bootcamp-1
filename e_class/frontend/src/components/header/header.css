@@ -1,0 +1,19 @@
+.header {
+    width: 100%;
+    background-color: rgb(82, 125, 162);
+    display: flex;
+}
+
+.left {
+    width: 40%;
+}
+
+.rigth {
+    width: 55%;
+    margin: 0px;
+
+}
+
+.head2 {
+    width: 650px;
+}

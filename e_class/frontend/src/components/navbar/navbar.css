@@ -1,5 +1,5 @@
 .navbar {
-    width: 100%;
+    width: max-content;
     margin: 0px;
     height: 20px;
     padding: 5%;
@@ -7,9 +7,7 @@
     display: flex;
 }
 
-.logo {
-    width: 60%;
-}
+
 
 .logo-img {
     margin-left: 110px;
@@ -17,13 +15,13 @@
 }
 
 .navbar-list {
-    width: 40%;
     display: flex;
     list-style: none;
 }
 
 .navbar-list li {
-    margin: 15px;
+    margin: 25px;
+    width: 150px;
 }
 
 .navbar-list .getStarted {
@@ -31,6 +29,8 @@
     border: 0.5px solid #243643;
     padding: 8px;
     border-radius: 15px;
-    height: 20px;
+    height: 40px;
     margin-top: 1px;
+    width: 200px;
+    margin-top: 14px;
 }
