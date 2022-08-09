@@ -27,18 +27,18 @@ export default function Service(props) {
                             'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elits'
                         },
                         {
-                            'source': img3,
+                            'source': img4,
                             'title': 'parent reccord',
                             'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elits'
                         },
                         {
-                            'source': img4,
+                            'source': img3,
                             'title': 'teacher management',
                             'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elits'
                         }
                     ].map((variant) => (
                         <Col className="service" xs={3} key={variant} variant={variant}>
-                            <img className="img" src={variant.source} />
+                            <img className="img" src={variant.source} alt="img"/>
                             <h3> {variant.title} </h3>
                             <p> {variant.description}   </p>
                         </Col>
