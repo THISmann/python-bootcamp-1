@@ -1,0 +1,27 @@
+.Dashhead {
+    height: 400px;
+    background-color: blanchedalmond;
+}
+
+.Dashboad_head {
+    background-color: white;
+    padding: 5px;
+    width: 900px;
+}
+
+.dashbord_item {
+    display: flex;
+    background-color: #243643;
+    border: 0px solid black;
+    border-radius: 5px;
+    margin: 6px;
+    color: white;
+    padding: 6px;
+}
+
+.dashbord_item img {
+    width: 50px;
+    height: 50px;
+}
+
+.dashbord_item div {}
