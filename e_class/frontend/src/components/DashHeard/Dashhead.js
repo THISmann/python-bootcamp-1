@@ -43,7 +43,7 @@ export default function Dashhead() {
                 ))}
             </Row>
 
-            <Row className='Dashboad_table'>
+            <Row className='m-1'>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -73,6 +73,9 @@ export default function Dashhead() {
                         </tr>
                     </tbody>
                 </Table>
+            </Row>
+            <Row>
+
             </Row>
         </Container>
     );
