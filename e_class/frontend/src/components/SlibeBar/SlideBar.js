@@ -17,13 +17,18 @@ export default function SlideBar() {
                         'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elits'
                     },
                     {
+                        'source': img4,
+                        'title': 'quizz',
+                        'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elits'
+                    },
+                    {
                         'source': img2,
                         'title': 'student record',
                         'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elits'
                     },
                     {
                         'source': img3,
-                        'title': 'parent reccord',
+                        'title': 'school record',
                         'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elits'
                     },
                     {
