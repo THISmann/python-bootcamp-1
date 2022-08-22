@@ -22,13 +22,13 @@ export default function Dashhead() {
                 label: 'My First dataset',
                 backgroundColor: 'rgba(194, 116, 161, 0.5)',
                 borderColor: 'rgb(194, 116, 161)',
-                data: [35, 25, 90, 81, 56, 55, 40],
+                data: [35, 25, 40, 75, 56, 55, 40],
             },
             {
                 label: 'My Second dataset',
                 backgroundColor: 'rgba(71, 225, 167, 0.5)',
                 borderColor: 'rgb(71, 225, 167)',
-                data: [30, 30, 40, 19, 96, 27, 100],
+                data: [30, 30, 40, 19, 56, 27, 70],
             },
             {
                 label: 'My last dataset',
@@ -81,23 +81,19 @@ export default function Dashhead() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td colSpan={2}>Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        {[{
+                            'a': '1',
+                            'b': '2',
+                            'c': '3',
+                            'd': '4'
+                        }].map((data) => (
+                            <tr>
+                                <td>{data.a}</td>
+                                <td>{data.b}</td>
+                                <td>{data.c}</td>
+                                <td>{data.d}</td>
+                            </tr>
+                        ))}  
                     </tbody>
                 </Table>
             </Row>
